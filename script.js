@@ -83,7 +83,15 @@ const translations = {
     contactMailCta: 'Escribirme por email',
     contactGithubCta: 'Abrir GitHub',
     footerText: 'Portfolio personal. Selección intencional de trabajo público y proyectos en preparación.',
-    footerBack: 'Volver arriba'
+    footerBack: 'Volver arriba',
+
+    certKicker: 'Formación',
+    certTitle: 'Formación y certificados',
+    certIntro: 'Formación académica y cursos seleccionados que complementan mi perfil técnico. Incluyo solo lo que considero relevante para el tipo de trabajo que quiero hacer.',
+    cert1Title: 'Iniciación al desarrollo con IA',
+    cert1Meta: '6 horas · marzo 2026',
+    cert1Text: 'Formación introductoria centrada en desarrollo con IA y en una visión práctica del paso de 0 a producción.',
+    cert1Cta: 'Ver certificado',
   },
   en: {
     pageTitle: 'Alejandro Rodríguez Ortega | Portfolio',
@@ -169,7 +177,14 @@ const translations = {
     contactMailCta: 'Email me',
     contactGithubCta: 'Open GitHub',
     footerText: 'Personal portfolio. Intentional selection of public work and projects in progress.',
-    footerBack: 'Back to top'
+    footerBack: 'Back to top',
+    certKicker: 'Education',
+    certTitle: 'Education and certificates',
+    certIntro: 'Academic background and selected courses that complement my technical profile. I only include what I consider relevant to the kind of work I want to do.',
+    cert1Title: 'Introduction to AI Development',
+    cert1Meta: '6 hours · March 2026',
+    cert1Text: 'Introductory training focused on AI development and a practical view of moving from zero to production.',
+    cert1Cta: 'View certificate',
   }
 };
 
