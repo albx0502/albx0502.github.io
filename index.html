@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Alejandro Rodríguez Ortega. Desarrollador junior con foco en producto, lógica de sistemas y proyectos personales con criterio técnico."
+    />
+    <title>Alejandro Rodríguez Ortega | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Inicio">
+          <span class="brand-mark">ARO</span>
+          <span class="brand-text">Portfolio</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Principal">
+          <a href="#featured" data-i18n="navWork">Trabajo</a>
+          <a href="#about" data-i18n="navAbout">Sobre mí</a>
+          <a href="#stack" data-i18n="navStack">Stack</a>
+          <a href="#roadmap" data-i18n="navRoadmap">En desarrollo</a>
+          <a href="#contact" data-i18n="navContact">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="language-switch" aria-label="Language switcher">
+            <button class="lang-btn is-active" type="button" data-lang="es">ES</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" data-i18n="heroEyebrow">Desarrollador junior · Portfolio seleccionado</p>
+            <h1 data-i18n="heroTitle">Construyo software con criterio, base técnica y ganas reales de crecer.</h1>
+            <p class="hero-text" data-i18n="heroText">
+              Soy Alejandro Rodríguez Ortega, desarrollador junior. Este portfolio no intenta aparentar más experiencia de la que tengo: está pensado para enseñar cómo trabajo, qué decisiones tomo y qué tipo de proyectos quiero seguir construyendo.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#featured" data-i18n="heroPrimaryCta">Ver proyecto destacado</a>
+              <a class="button button-secondary" href="https://github.com/albx0502" target="_blank" rel="noreferrer" data-i18n="heroSecondaryCta">Ver GitHub</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal" aria-label="Resumen profesional">
+            <div class="panel-card">
+              <p class="panel-label" data-i18n="summaryLabel">Resumen</p>
+              <ul class="summary-list">
+                <li>
+                  <span class="summary-key" data-i18n="summaryRoleLabel">Perfil</span>
+                  <span class="summary-value" data-i18n="summaryRoleValue">Junior developer</span>
+                </li>
+                <li>
+                  <span class="summary-key" data-i18n="summaryFocusLabel">Foco</span>
+                  <span class="summary-value" data-i18n="summaryFocusValue">Frontend, lógica de producto y proyectos personales</span>
+                </li>
+                <li>
+                  <span class="summary-key" data-i18n="summaryLookingLabel">Objetivo</span>
+                  <span class="summary-value" data-i18n="summaryLookingValue">Primera oportunidad profesional</span>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="featured">
+        <div class="container section-shell reveal">
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="featuredKicker">Proyecto destacado</p>
+            <h2 data-i18n="featuredTitle">Trabajo seleccionado</h2>
+            <p class="section-intro" data-i18n="featuredIntro">
+              He preferido enseñar poco pero con contexto. Ahora mismo, el proyecto público que mejor representa mi forma de trabajar es Project Soulware.
+            </p>
+          </div>
+
+          <article class="project-card project-card-featured">
+            <div class="project-topline">
+              <div>
+                <h3>Project Soulware</h3>
+                <p class="project-subtitle" data-i18n="projectSubtitle">Demo técnica experimental construida con Godot</p>
+              </div>
+              <span class="status-pill" data-i18n="projectStatus">Proyecto público / demo</span>
+            </div>
+
+            <p class="project-description" data-i18n="projectDescription">
+              Proyecto colaborativo orientado a explorar diálogos y eventos apoyados en IA generativa dentro de un RPG experimental. Mi aportación estuvo especialmente centrada en el sistema de combate, en la implementación de IA para eventos y en soporte técnico para mecánicas menos convencionales.
+            </p>
+
+            <div class="project-grid">
+              <div class="project-panel">
+                <h4 data-i18n="projectWhatTitle">Qué muestra</h4>
+                <p data-i18n="projectWhatText">
+                  Capacidad para entrar en un proyecto compartido, trabajar sobre sistemas jugables y resolver problemas técnicos con enfoque práctico.
+                </p>
+              </div>
+
+              <div class="project-panel">
+                <h4 data-i18n="projectContributionTitle">Mi contribución</h4>
+                <p data-i18n="projectContributionText">
+                  No lo presento como un proyecto hecho en solitario. Lo valioso aquí es la parte de sistemas y la contribución técnica real dentro de un trabajo en equipo.
+                </p>
+              </div>
+
+              <div class="project-panel">
+                <h4 data-i18n="projectTechTitle">Tecnologías</h4>
+                <p data-i18n="projectTechText">Godot · GDScript · lógica de juego · integración de sistemas</p>
+              </div>
+            </div>
+
+            <div class="tag-row" aria-label="Etiquetas del proyecto">
+              <span class="tag">Godot</span>
+              <span class="tag">GDScript</span>
+              <span class="tag" data-i18n="tagCombat">Combat systems</span>
+              <span class="tag">AI events</span>
+              <span class="tag" data-i18n="tagCollaboration">Collaborative project</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="button button-primary" href="https://isaacypunto.itch.io/project-soulware" target="_blank" rel="noreferrer" data-i18n="projectPlayCta">Ver página del proyecto</a>
+              <a class="button button-secondary" href="https://github.com/IsaacCepasDeFrutos/ProjectSoulware-Entregable" target="_blank" rel="noreferrer" data-i18n="projectRepoCta">Ver repositorio público</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container section-shell reveal">
+          <div class="section-heading narrow">
+            <p class="section-kicker" data-i18n="aboutKicker">Sobre mí</p>
+            <h2 data-i18n="aboutTitle">Perfil y enfoque</h2>
+          </div>
+
+          <div class="content-grid two-columns">
+            <div class="content-card">
+              <p data-i18n="aboutTextOne">
+                Estoy en una etapa inicial, así que no intento vender una trayectoria que todavía no tengo. Lo que sí quiero transmitir es una forma de trabajar: me interesan los proyectos donde hay que pensar estructura, mantener el código razonablemente limpio y tomar decisiones con sentido de producto.
+              </p>
+            </div>
+            <div class="content-card">
+              <p data-i18n="aboutTextTwo">
+                Mi GitHub público aún no refleja del todo mi nivel ni mis mejores ideas. Por eso este portfolio está planteado como una selección honesta: enseña lo que ya es defendible en público y deja claro hacia dónde quiero seguir creciendo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="stack">
+        <div class="container section-shell reveal">
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="stackKicker">Stack</p>
+            <h2 data-i18n="stackTitle">Tecnologías con las que trabajo</h2>
+            <p class="section-intro" data-i18n="stackIntro">
+              No separo esto en “experto” y “domino” porque, para un perfil junior, prefiero ser claro antes que inflar etiquetas.
+            </p>
+          </div>
+
+          <div class="stack-grid">
+            <article class="stack-card">
+              <h3 data-i18n="stackCoreTitle">Base actual</h3>
+              <div class="chip-group">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Java</span>
+                <span class="chip">SQL</span>
+                <span class="chip">Git / GitHub</span>
+              </div>
+            </article>
+
+            <article class="stack-card">
+              <h3 data-i18n="stackProjectsTitle">Usado en proyectos</h3>
+              <div class="chip-group">
+                <span class="chip">Godot</span>
+                <span class="chip">GDScript</span>
+                <span class="chip">Kotlin</span>
+                <span class="chip">Python</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">PHP</span>
+              </div>
+            </article>
+
+            <article class="stack-card">
+              <h3 data-i18n="stackLearningTitle">Explorando y ampliando</h3>
+              <div class="chip-group">
+                <span class="chip">Flutter</span>
+                <span class="chip">React</span>
+                <span class="chip">Django</span>
+                <span class="chip">Celery</span>
+                <span class="chip" data-i18n="chipProduct">Product thinking</span>
+                <span class="chip" data-i18n="chipUx">UI clarity</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="container section-shell reveal">
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="roadmapKicker">En desarrollo</p>
+            <h2 data-i18n="roadmapTitle">Ideas y próximos proyectos</h2>
+            <p class="section-intro" data-i18n="roadmapIntro">
+              No los presento como productos terminados. Me interesa enseñarlos como líneas reales de trabajo que quiero convertir en proyectos sólidos y publicables.
+            </p>
+          </div>
+
+          <div class="roadmap-grid">
+            <article class="roadmap-card">
+              <div class="roadmap-head">
+                <h3 data-i18n="ideaMagicTitle">Mesa privada para jugar Magic online</h3>
+                <span class="status-pill status-pill-muted" data-i18n="statusPlanning">En planificación</span>
+              </div>
+              <p data-i18n="ideaMagicText">
+                Idea de producto orientada a una experiencia privada y práctica para jugar Commander online sin depender de una plataforma masiva.
+              </p>
+            </article>
+
+            <article class="roadmap-card">
+              <div class="roadmap-head">
+                <h3 data-i18n="ideaFocusTitle">App Flutter para controlar tiempo en apps</h3>
+                <span class="status-pill status-pill-muted" data-i18n="statusPrototype">Prototipo / idea</span>
+              </div>
+              <p data-i18n="ideaFocusText">
+                Enfoque de utilidad diaria: límites de uso, fricción saludable y una interfaz clara para control personal del tiempo digital.
+              </p>
+            </article>
+
+            <article class="roadmap-card">
+              <div class="roadmap-head">
+                <h3 data-i18n="ideaDnDTitle">Herramienta para crear personajes de D&amp;D 5e</h3>
+                <span class="status-pill status-pill-muted" data-i18n="statusExploration">Exploración</span>
+              </div>
+              <p data-i18n="ideaDnDText">
+                Versión móvil y web/escritorio centrada en creación de personajes, organización de opciones y soporte para contenido ampliado.
+              </p>
+            </article>
+
+            <article class="roadmap-card">
+              <div class="roadmap-head">
+                <h3 data-i18n="ideaExtensionTitle">Extensión para limitar tiempo en páginas web</h3>
+                <span class="status-pill status-pill-muted" data-i18n="statusPlanning">En planificación</span>
+              </div>
+              <p data-i18n="ideaExtensionText">
+                Proyecto pequeño pero útil, pensado para trabajar bien restricciones, configuración local y experiencia de usuario sin ruido.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container reveal">
+          <div class="contact-card">
+            <div>
+              <p class="section-kicker" data-i18n="contactKicker">Contacto</p>
+              <h2 data-i18n="contactTitle">Busco una primera oportunidad para seguir creciendo en un entorno profesional serio.</h2>
+              <p class="contact-text" data-i18n="contactText">
+                Si encajo en un puesto junior o queréis hablar sobre mi trabajo, podéis escribirme o revisar los enlaces públicos de abajo.
+              </p>
+            </div>
+
+            <div class="contact-actions">
+              <a class="button button-primary" href="mailto:tuemail@example.com" data-i18n="contactMailCta">Escribirme por email</a>
+              <a class="button button-secondary" href="https://github.com/albx0502" target="_blank" rel="noreferrer" data-i18n="contactGithubCta">Abrir GitHub</a>
+            </div>
+
+            <ul class="social-list" aria-label="Enlaces sociales">
+              <li><a href="https://github.com/albx0502" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a href="https://isaacypunto.itch.io/project-soulware" target="_blank" rel="noreferrer">Itch.io</a></li>
+              <li><a href="https://github.com/IsaacCepasDeFrutos/ProjectSoulware-Entregable" target="_blank" rel="noreferrer">Project Soulware</a></li>
+              <li><a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p data-i18n="footerText">Portfolio personal. Selección intencional de trabajo público y proyectos en preparación.</p>
+        <a href="#top" data-i18n="footerBack">Volver arriba</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
