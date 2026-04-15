@@ -1,300 +1,563 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio de Alejandro Rodríguez Ortega. Desarrollador junior con foco en producto, lógica de sistemas y proyectos personales con criterio técnico."
-    />
-    <title>Alejandro Rodríguez Ortega | Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main" data-i18n="skipLink">Saltar al contenido</a>
+:root {
+  --bg: #0b1020;
+  --bg-soft: #121933;
+  --surface: rgba(18, 25, 51, 0.82);
+  --surface-strong: #151d3b;
+  --border: rgba(170, 185, 220, 0.18);
+  --text: #e9eefc;
+  --text-soft: #b8c3e1;
+  --text-muted: #8c9abf;
+  --accent: #7aa2ff;
+  --accent-strong: #93b4ff;
+  --shadow: 0 18px 60px rgba(2, 8, 23, 0.35);
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --container: min(1120px, calc(100% - 2rem));
+}
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Inicio">
-          <span class="brand-mark">ARO</span>
-          <span class="brand-text">Portfolio</span>
-        </a>
+* {
+  box-sizing: border-box;
+}
 
-        <nav class="main-nav" aria-label="Principal">
-          <a href="#featured" data-i18n="navWork">Trabajo</a>
-          <a href="#about" data-i18n="navAbout">Sobre mí</a>
-          <a href="#stack" data-i18n="navStack">Stack</a>
-          <a href="#roadmap" data-i18n="navRoadmap">En desarrollo</a>
-          <a href="#contact" data-i18n="navContact">Contacto</a>
-        </nav>
+html {
+  scroll-behavior: smooth;
+}
 
-        <div class="header-actions">
-          <div class="language-switch" aria-label="Language switcher">
-            <button class="lang-btn is-active" type="button" data-lang="es">ES</button>
-            <button class="lang-btn" type="button" data-lang="en">EN</button>
-          </div>
-        </div>
-      </div>
-    </header>
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(122, 162, 255, 0.12), transparent 32%),
+    linear-gradient(180deg, #0a0f1e 0%, #0b1020 52%, #09101d 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    <main id="main">
-      <section class="hero section" id="top">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow" data-i18n="heroEyebrow">Desarrollador junior · Portfolio seleccionado</p>
-            <h1 data-i18n="heroTitle">Construyo software con criterio, base técnica y ganas reales de crecer.</h1>
-            <p class="hero-text" data-i18n="heroText">
-              Soy Alejandro Rodríguez Ortega, desarrollador junior. Este portfolio no intenta aparentar más experiencia de la que tengo: está pensado para enseñar cómo trabajo, qué decisiones tomo y qué tipo de proyectos quiero seguir construyendo.
-            </p>
+body::selection {
+  background: rgba(122, 162, 255, 0.35);
+}
 
-            <div class="hero-actions">
-              <a class="button button-primary" href="#featured" data-i18n="heroPrimaryCta">Ver proyecto destacado</a>
-              <a class="button button-secondary" href="https://github.com/albx0502" target="_blank" rel="noreferrer" data-i18n="heroSecondaryCta">Ver GitHub</a>
-            </div>
-          </div>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-          <aside class="hero-panel reveal" aria-label="Resumen profesional">
-            <div class="panel-card">
-              <p class="panel-label" data-i18n="summaryLabel">Resumen</p>
-              <ul class="summary-list">
-                <li>
-                  <span class="summary-key" data-i18n="summaryRoleLabel">Perfil</span>
-                  <span class="summary-value" data-i18n="summaryRoleValue">Junior developer</span>
-                </li>
-                <li>
-                  <span class="summary-key" data-i18n="summaryFocusLabel">Foco</span>
-                  <span class="summary-value" data-i18n="summaryFocusValue">Frontend, lógica de producto y proyectos personales</span>
-                </li>
-                <li>
-                  <span class="summary-key" data-i18n="summaryLookingLabel">Objetivo</span>
-                  <span class="summary-value" data-i18n="summaryLookingValue">Primera oportunidad profesional</span>
-                </li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </section>
+img {
+  max-width: 100%;
+}
 
-      <section class="section" id="featured">
-        <div class="container section-shell reveal">
-          <div class="section-heading">
-            <p class="section-kicker" data-i18n="featuredKicker">Proyecto destacado</p>
-            <h2 data-i18n="featuredTitle">Trabajo seleccionado</h2>
-            <p class="section-intro" data-i18n="featuredIntro">
-              He preferido enseñar poco pero con contexto. Ahora mismo, el proyecto público que mejor representa mi forma de trabajar es Project Soulware.
-            </p>
-          </div>
+button,
+a.button {
+  font: inherit;
+}
 
-          <article class="project-card project-card-featured">
-            <div class="project-topline">
-              <div>
-                <h3>Project Soulware</h3>
-                <p class="project-subtitle" data-i18n="projectSubtitle">Demo técnica experimental construida con Godot</p>
-              </div>
-              <span class="status-pill" data-i18n="projectStatus">Proyecto público / demo</span>
-            </div>
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #08101f;
+  border-radius: 999px;
+  z-index: 200;
+}
 
-            <p class="project-description" data-i18n="projectDescription">
-              Proyecto colaborativo orientado a explorar diálogos y eventos apoyados en IA generativa dentro de un RPG experimental. Mi aportación estuvo especialmente centrada en el sistema de combate, en la implementación de IA para eventos y en soporte técnico para mecánicas menos convencionales.
-            </p>
+.skip-link:focus {
+  top: 1rem;
+}
 
-            <div class="project-grid">
-              <div class="project-panel">
-                <h4 data-i18n="projectWhatTitle">Qué muestra</h4>
-                <p data-i18n="projectWhatText">
-                  Capacidad para entrar en un proyecto compartido, trabajar sobre sistemas jugables y resolver problemas técnicos con enfoque práctico.
-                </p>
-              </div>
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
 
-              <div class="project-panel">
-                <h4 data-i18n="projectContributionTitle">Mi contribución</h4>
-                <p data-i18n="projectContributionText">
-                  No lo presento como un proyecto hecho en solitario. Lo valioso aquí es la parte de sistemas y la contribución técnica real dentro de un trabajo en equipo.
-                </p>
-              </div>
+.section {
+  padding: 4.5rem 0;
+}
 
-              <div class="project-panel">
-                <h4 data-i18n="projectTechTitle">Tecnologías</h4>
-                <p data-i18n="projectTechText">Godot · GDScript · lógica de juego · integración de sistemas</p>
-              </div>
-            </div>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(18px);
+  background: rgba(6, 10, 20, 0.72);
+  border-bottom: 1px solid rgba(170, 185, 220, 0.08);
+}
 
-            <div class="tag-row" aria-label="Etiquetas del proyecto">
-              <span class="tag">Godot</span>
-              <span class="tag">GDScript</span>
-              <span class="tag" data-i18n="tagCombat">Combat systems</span>
-              <span class="tag">AI events</span>
-              <span class="tag" data-i18n="tagCollaboration">Collaborative project</span>
-            </div>
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.75rem;
+}
 
-            <div class="project-actions">
-              <a class="button button-primary" href="https://isaacypunto.itch.io/project-soulware" target="_blank" rel="noreferrer" data-i18n="projectPlayCta">Ver página del proyecto</a>
-              <a class="button button-secondary" href="https://github.com/IsaacCepasDeFrutos/ProjectSoulware-Entregable" target="_blank" rel="noreferrer" data-i18n="projectRepoCta">Ver repositorio público</a>
-            </div>
-          </article>
-        </div>
-      </section>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
 
-      <section class="section" id="about">
-        <div class="container section-shell reveal">
-          <div class="section-heading narrow">
-            <p class="section-kicker" data-i18n="aboutKicker">Sobre mí</p>
-            <h2 data-i18n="aboutTitle">Perfil y enfoque</h2>
-          </div>
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(122, 162, 255, 0.22), rgba(122, 162, 255, 0.08));
+  border: 1px solid rgba(122, 162, 255, 0.25);
+  color: var(--accent-strong);
+  letter-spacing: 0.08em;
+  font-size: 0.88rem;
+}
 
-          <div class="content-grid two-columns">
-            <div class="content-card">
-              <p data-i18n="aboutTextOne">
-                Estoy en una etapa inicial, así que no intento vender una trayectoria que todavía no tengo. Lo que sí quiero transmitir es una forma de trabajar: me interesan los proyectos donde hay que pensar estructura, mantener el código razonablemente limpio y tomar decisiones con sentido de producto.
-              </p>
-            </div>
-            <div class="content-card">
-              <p data-i18n="aboutTextTwo">
-                Mi GitHub público aún no refleja del todo mi nivel ni mis mejores ideas. Por eso este portfolio está planteado como una selección honesta: enseña lo que ya es defendible en público y deja claro hacia dónde quiero seguir creciendo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+.brand-text {
+  color: var(--text-soft);
+}
 
-      <section class="section" id="stack">
-        <div class="container section-shell reveal">
-          <div class="section-heading">
-            <p class="section-kicker" data-i18n="stackKicker">Stack</p>
-            <h2 data-i18n="stackTitle">Tecnologías con las que trabajo</h2>
-            <p class="section-intro" data-i18n="stackIntro">
-              No separo esto en “experto” y “domino” porque, para un perfil junior, prefiero ser claro antes que inflar etiquetas.
-            </p>
-          </div>
+.main-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 
-          <div class="stack-grid">
-            <article class="stack-card">
-              <h3 data-i18n="stackCoreTitle">Base actual</h3>
-              <div class="chip-group">
-                <span class="chip">HTML</span>
-                <span class="chip">CSS</span>
-                <span class="chip">JavaScript</span>
-                <span class="chip">Java</span>
-                <span class="chip">SQL</span>
-                <span class="chip">Git / GitHub</span>
-              </div>
-            </article>
+.main-nav a {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
 
-            <article class="stack-card">
-              <h3 data-i18n="stackProjectsTitle">Usado en proyectos</h3>
-              <div class="chip-group">
-                <span class="chip">Godot</span>
-                <span class="chip">GDScript</span>
-                <span class="chip">Kotlin</span>
-                <span class="chip">Python</span>
-                <span class="chip">TypeScript</span>
-                <span class="chip">PHP</span>
-              </div>
-            </article>
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--text);
+}
 
-            <article class="stack-card">
-              <h3 data-i18n="stackLearningTitle">Explorando y ampliando</h3>
-              <div class="chip-group">
-                <span class="chip">Flutter</span>
-                <span class="chip">React</span>
-                <span class="chip">Django</span>
-                <span class="chip">Celery</span>
-                <span class="chip" data-i18n="chipProduct">Product thinking</span>
-                <span class="chip" data-i18n="chipUx">UI clarity</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-      <section class="section" id="roadmap">
-        <div class="container section-shell reveal">
-          <div class="section-heading">
-            <p class="section-kicker" data-i18n="roadmapKicker">En desarrollo</p>
-            <h2 data-i18n="roadmapTitle">Ideas y próximos proyectos</h2>
-            <p class="section-intro" data-i18n="roadmapIntro">
-              No los presento como productos terminados. Me interesa enseñarlos como líneas reales de trabajo que quiero convertir en proyectos sólidos y publicables.
-            </p>
-          </div>
+.language-switch {
+  display: inline-flex;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
 
-          <div class="roadmap-grid">
-            <article class="roadmap-card">
-              <div class="roadmap-head">
-                <h3 data-i18n="ideaMagicTitle">Mesa privada para jugar Magic online</h3>
-                <span class="status-pill status-pill-muted" data-i18n="statusPlanning">En planificación</span>
-              </div>
-              <p data-i18n="ideaMagicText">
-                Idea de producto orientada a una experiencia privada y práctica para jugar Commander online sin depender de una plataforma masiva.
-              </p>
-            </article>
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--text-soft);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
 
-            <article class="roadmap-card">
-              <div class="roadmap-head">
-                <h3 data-i18n="ideaFocusTitle">App Flutter para controlar tiempo en apps</h3>
-                <span class="status-pill status-pill-muted" data-i18n="statusPrototype">Prototipo / idea</span>
-              </div>
-              <p data-i18n="ideaFocusText">
-                Enfoque de utilidad diaria: límites de uso, fricción saludable y una interfaz clara para control personal del tiempo digital.
-              </p>
-            </article>
+.lang-btn.is-active {
+  background: rgba(122, 162, 255, 0.16);
+  color: var(--text);
+}
 
-            <article class="roadmap-card">
-              <div class="roadmap-head">
-                <h3 data-i18n="ideaDnDTitle">Herramienta para crear personajes de D&amp;D 5e</h3>
-                <span class="status-pill status-pill-muted" data-i18n="statusExploration">Exploración</span>
-              </div>
-              <p data-i18n="ideaDnDText">
-                Versión móvil y web/escritorio centrada en creación de personajes, organización de opciones y soporte para contenido ampliado.
-              </p>
-            </article>
+.hero {
+  padding-top: 5.5rem;
+}
 
-            <article class="roadmap-card">
-              <div class="roadmap-head">
-                <h3 data-i18n="ideaExtensionTitle">Extensión para limitar tiempo en páginas web</h3>
-                <span class="status-pill status-pill-muted" data-i18n="statusPlanning">En planificación</span>
-              </div>
-              <p data-i18n="ideaExtensionText">
-                Proyecto pequeño pero útil, pensado para trabajar bien restricciones, configuración local y experiencia de usuario sin ruido.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
+  gap: 1.5rem;
+  align-items: start;
+}
 
-      <section class="section" id="contact">
-        <div class="container reveal">
-          <div class="contact-card">
-            <div>
-              <p class="section-kicker" data-i18n="contactKicker">Contacto</p>
-              <h2 data-i18n="contactTitle">Busco una primera oportunidad para seguir creciendo en un entorno profesional serio.</h2>
-              <p class="contact-text" data-i18n="contactText">
-                Si encajo en un puesto junior o queréis hablar sobre mi trabajo, podéis escribirme o revisar los enlaces públicos de abajo.
-              </p>
-            </div>
+.hero-copy,
+.hero-panel,
+.section-shell,
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
 
-            <div class="contact-actions">
-              <a class="button button-primary" href="mailto:tuemail@example.com" data-i18n="contactMailCta">Escribirme por email</a>
-              <a class="button button-secondary" href="https://github.com/albx0502" target="_blank" rel="noreferrer" data-i18n="contactGithubCta">Abrir GitHub</a>
-            </div>
+.hero-copy,
+.contact-card,
+.section-shell {
+  border-radius: var(--radius-lg);
+}
 
-            <ul class="social-list" aria-label="Enlaces sociales">
-              <li><a href="https://github.com/albx0502" target="_blank" rel="noreferrer">GitHub</a></li>
-              <li><a href="https://isaacypunto.itch.io/project-soulware" target="_blank" rel="noreferrer">Itch.io</a></li>
-              <li><a href="https://github.com/IsaacCepasDeFrutos/ProjectSoulware-Entregable" target="_blank" rel="noreferrer">Project Soulware</a></li>
-              <li><a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noreferrer">LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+.hero-copy {
+  padding: 2.5rem;
+}
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p data-i18n="footerText">Portfolio personal. Selección intencional de trabajo público y proyectos en preparación.</p>
-        <a href="#top" data-i18n="footerBack">Volver arriba</a>
-      </div>
-    </footer>
+.hero-panel {
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
 
-    <script src="script.js"></script>
-  </body>
-</html>
+.eyebrow,
+.section-kicker,
+.panel-label {
+  margin: 0 0 1rem;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.hero h1,
+.section-heading h2,
+.contact-card h2 {
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  font-size: clamp(2.35rem, 5vw, 4.35rem);
+  max-width: 11ch;
+}
+
+.hero-text,
+.section-intro,
+.project-description,
+.contact-text,
+.content-card p,
+.stack-card,
+.roadmap-card p {
+  color: var(--text-soft);
+}
+
+.hero-text {
+  max-width: 62ch;
+  font-size: 1.02rem;
+  margin: 1.35rem 0 0;
+}
+
+.hero-actions,
+.project-actions,
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.8rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible,
+.lang-btn:hover,
+.lang-btn:focus-visible,
+.social-list a:hover,
+.social-list a:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, rgba(122, 162, 255, 0.95), rgba(147, 180, 255, 0.9));
+  color: #07101d;
+  font-weight: 700;
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.panel-card {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+}
+
+.summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.summary-list li {
+  display: grid;
+  gap: 0.3rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid rgba(170, 185, 220, 0.1);
+}
+
+.summary-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.summary-key {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.summary-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.section-shell {
+  padding: 2rem;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.section-heading.narrow {
+  max-width: 760px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  margin-bottom: 0.7rem;
+}
+
+.section-intro {
+  margin: 0;
+  max-width: 64ch;
+}
+
+.project-card,
+.content-card,
+.stack-card,
+.roadmap-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(170, 185, 220, 0.12);
+  border-radius: var(--radius-md);
+}
+
+.project-card-featured {
+  padding: 1.6rem;
+}
+
+.project-topline,
+.roadmap-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.project-topline h3,
+.stack-card h3,
+.roadmap-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.project-subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+}
+
+.status-pill {
+  white-space: nowrap;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(122, 162, 255, 0.14);
+  color: var(--accent-strong);
+  border: 1px solid rgba(122, 162, 255, 0.22);
+  font-size: 0.83rem;
+}
+
+.status-pill-muted {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-soft);
+  border-color: rgba(170, 185, 220, 0.16);
+}
+
+.project-description {
+  margin: 1rem 0 1.4rem;
+}
+
+.project-grid,
+.content-grid,
+.stack-grid,
+.roadmap-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-panel,
+.content-card,
+.stack-card,
+.roadmap-card {
+  padding: 1.2rem;
+}
+
+.project-panel h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.project-panel p,
+.content-card p,
+.stack-card p,
+.roadmap-card p {
+  margin: 0;
+}
+
+.tag-row,
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tag,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(170, 185, 220, 0.12);
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.content-grid.two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stack-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roadmap-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-card {
+  padding: 2rem;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-list a {
+  color: var(--text-soft);
+}
+
+.site-footer {
+  padding: 1.4rem 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero-grid,
+  .project-grid,
+  .stack-grid,
+  .roadmap-grid,
+  .content-grid.two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 3.4rem 0;
+  }
+
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .hero-copy,
+  .section-shell,
+  .contact-card {
+    padding: 1.35rem;
+  }
+
+  .project-card-featured {
+    padding: 1.2rem;
+  }
+
+  .project-topline,
+  .roadmap-head,
+  .footer-inner,
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-inner {
+    min-height: auto;
+    padding: 0.8rem 0;
+  }
+
+  .social-list {
+    gap: 0.8rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

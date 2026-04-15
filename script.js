@@ -1,563 +1,227 @@
-:root {
-  --bg: #0b1020;
-  --bg-soft: #121933;
-  --surface: rgba(18, 25, 51, 0.82);
-  --surface-strong: #151d3b;
-  --border: rgba(170, 185, 220, 0.18);
-  --text: #e9eefc;
-  --text-soft: #b8c3e1;
-  --text-muted: #8c9abf;
-  --accent: #7aa2ff;
-  --accent-strong: #93b4ff;
-  --shadow: 0 18px 60px rgba(2, 8, 23, 0.35);
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-sm: 12px;
-  --container: min(1120px, calc(100% - 2rem));
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(122, 162, 255, 0.12), transparent 32%),
-    linear-gradient(180deg, #0a0f1e 0%, #0b1020 52%, #09101d 100%);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-body::selection {
-  background: rgba(122, 162, 255, 0.35);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-button,
-a.button {
-  font: inherit;
-}
-
-.skip-link {
-  position: absolute;
-  left: 1rem;
-  top: -4rem;
-  padding: 0.75rem 1rem;
-  background: var(--accent);
-  color: #08101f;
-  border-radius: 999px;
-  z-index: 200;
-}
-
-.skip-link:focus {
-  top: 1rem;
-}
-
-.container {
-  width: var(--container);
-  margin: 0 auto;
-}
-
-.section {
-  padding: 4.5rem 0;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(18px);
-  background: rgba(6, 10, 20, 0.72);
-  border-bottom: 1px solid rgba(170, 185, 220, 0.08);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 4.75rem;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-weight: 600;
-}
-
-.brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(122, 162, 255, 0.22), rgba(122, 162, 255, 0.08));
-  border: 1px solid rgba(122, 162, 255, 0.25);
-  color: var(--accent-strong);
-  letter-spacing: 0.08em;
-  font-size: 0.88rem;
-}
-
-.brand-text {
-  color: var(--text-soft);
-}
-
-.main-nav {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.main-nav a {
-  color: var(--text-soft);
-  font-size: 0.95rem;
-}
-
-.main-nav a:hover,
-.main-nav a:focus-visible {
-  color: var(--text);
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.language-switch {
-  display: inline-flex;
-  padding: 0.25rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.lang-btn {
-  border: 0;
-  background: transparent;
-  color: var(--text-soft);
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.lang-btn.is-active {
-  background: rgba(122, 162, 255, 0.16);
-  color: var(--text);
-}
-
-.hero {
-  padding-top: 5.5rem;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.hero-copy,
-.hero-panel,
-.section-shell,
-.contact-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-.hero-copy,
-.contact-card,
-.section-shell {
-  border-radius: var(--radius-lg);
-}
-
-.hero-copy {
-  padding: 2.5rem;
-}
-
-.hero-panel {
-  border-radius: var(--radius-lg);
-  padding: 1.25rem;
-}
-
-.eyebrow,
-.section-kicker,
-.panel-label {
-  margin: 0 0 1rem;
-  color: var(--accent-strong);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.hero h1,
-.section-heading h2,
-.contact-card h2 {
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.hero h1 {
-  font-size: clamp(2.35rem, 5vw, 4.35rem);
-  max-width: 11ch;
-}
-
-.hero-text,
-.section-intro,
-.project-description,
-.contact-text,
-.content-card p,
-.stack-card,
-.roadmap-card p {
-  color: var(--text-soft);
-}
-
-.hero-text {
-  max-width: 62ch;
-  font-size: 1.02rem;
-  margin: 1.35rem 0 0;
-}
-
-.hero-actions,
-.project-actions,
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  margin-top: 1.8rem;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-height: 3rem;
-  padding: 0.8rem 1.15rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-}
-
-.button:hover,
-.button:focus-visible,
-.lang-btn:hover,
-.lang-btn:focus-visible,
-.social-list a:hover,
-.social-list a:focus-visible {
-  transform: translateY(-1px);
-}
-
-.button-primary {
-  background: linear-gradient(135deg, rgba(122, 162, 255, 0.95), rgba(147, 180, 255, 0.9));
-  color: #07101d;
-  font-weight: 700;
-}
-
-.button-secondary {
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text);
-  border-color: var(--border);
-}
-
-.panel-card {
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-}
-
-.summary-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.summary-list li {
-  display: grid;
-  gap: 0.3rem;
-  padding-bottom: 0.95rem;
-  border-bottom: 1px solid rgba(170, 185, 220, 0.1);
-}
-
-.summary-list li:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.summary-key {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.summary-value {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.section-shell {
-  padding: 2rem;
-}
-
-.section-heading {
-  margin-bottom: 1.5rem;
-}
-
-.section-heading.narrow {
-  max-width: 760px;
-}
-
-.section-heading h2 {
-  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
-  margin-bottom: 0.7rem;
-}
-
-.section-intro {
-  margin: 0;
-  max-width: 64ch;
-}
-
-.project-card,
-.content-card,
-.stack-card,
-.roadmap-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(170, 185, 220, 0.12);
-  border-radius: var(--radius-md);
-}
-
-.project-card-featured {
-  padding: 1.6rem;
-}
-
-.project-topline,
-.roadmap-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.project-topline h3,
-.stack-card h3,
-.roadmap-card h3 {
-  margin: 0;
-  font-size: 1.3rem;
-}
-
-.project-subtitle {
-  margin: 0.35rem 0 0;
-  color: var(--text-muted);
-}
-
-.status-pill {
-  white-space: nowrap;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(122, 162, 255, 0.14);
-  color: var(--accent-strong);
-  border: 1px solid rgba(122, 162, 255, 0.22);
-  font-size: 0.83rem;
-}
-
-.status-pill-muted {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-soft);
-  border-color: rgba(170, 185, 220, 0.16);
-}
-
-.project-description {
-  margin: 1rem 0 1.4rem;
-}
-
-.project-grid,
-.content-grid,
-.stack-grid,
-.roadmap-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.project-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.project-panel,
-.content-card,
-.stack-card,
-.roadmap-card {
-  padding: 1.2rem;
-}
-
-.project-panel h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1rem;
-}
-
-.project-panel p,
-.content-card p,
-.stack-card p,
-.roadmap-card p {
-  margin: 0;
-}
-
-.tag-row,
-.chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-.tag,
-.chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2rem;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(170, 185, 220, 0.12);
-  color: var(--text-soft);
-  font-size: 0.92rem;
-}
-
-.content-grid.two-columns {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.stack-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.roadmap-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.contact-card {
-  padding: 2rem;
-}
-
-.social-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.4rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.social-list a {
-  color: var(--text-soft);
-}
-
-.site-footer {
-  padding: 1.4rem 0 2rem;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  color: var(--text-muted);
-  font-size: 0.94rem;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 420ms ease, transform 420ms ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 980px) {
-  .hero-grid,
-  .project-grid,
-  .stack-grid,
-  .roadmap-grid,
-  .content-grid.two-columns {
-    grid-template-columns: 1fr;
+const translations = {
+  es: {
+    pageTitle: 'Alejandro Rodríguez Ortega | Portfolio',
+    pageDescription:
+      'Portfolio de Alejandro Rodríguez Ortega. Desarrollador junior con foco en producto, lógica de sistemas y proyectos personales con criterio técnico.',
+    skipLink: 'Saltar al contenido',
+    navWork: 'Trabajo',
+    navAbout: 'Sobre mí',
+    navStack: 'Stack',
+    navRoadmap: 'En desarrollo',
+    navContact: 'Contacto',
+    heroEyebrow: 'Desarrollador junior · Portfolio seleccionado',
+    heroTitle: 'Construyo software con criterio, base técnica y ganas reales de crecer.',
+    heroText:
+      'Soy Alejandro Rodríguez Ortega, desarrollador junior. Este portfolio no intenta aparentar más experiencia de la que tengo: está pensado para enseñar cómo trabajo, qué decisiones tomo y qué tipo de proyectos quiero seguir construyendo.',
+    heroPrimaryCta: 'Ver proyecto destacado',
+    heroSecondaryCta: 'Ver GitHub',
+    summaryLabel: 'Resumen',
+    summaryRoleLabel: 'Perfil',
+    summaryRoleValue: 'Junior developer',
+    summaryFocusLabel: 'Foco',
+    summaryFocusValue: 'Frontend, lógica de producto y proyectos personales',
+    summaryLookingLabel: 'Objetivo',
+    summaryLookingValue: 'Primera oportunidad profesional',
+    featuredKicker: 'Proyecto destacado',
+    featuredTitle: 'Trabajo seleccionado',
+    featuredIntro:
+      'He preferido enseñar poco pero con contexto. Ahora mismo, el proyecto público que mejor representa mi forma de trabajar es Project Soulware.',
+    projectSubtitle: 'Demo técnica experimental construida con Godot',
+    projectStatus: 'Proyecto público / demo',
+    projectDescription:
+      'Proyecto colaborativo orientado a explorar diálogos y eventos apoyados en IA generativa dentro de un RPG experimental. Mi aportación estuvo especialmente centrada en el sistema de combate, en la implementación de IA para eventos y en soporte técnico para mecánicas menos convencionales.',
+    projectWhatTitle: 'Qué muestra',
+    projectWhatText:
+      'Capacidad para entrar en un proyecto compartido, trabajar sobre sistemas jugables y resolver problemas técnicos con enfoque práctico.',
+    projectContributionTitle: 'Mi contribución',
+    projectContributionText:
+      'No lo presento como un proyecto hecho en solitario. Lo valioso aquí es la parte de sistemas y la contribución técnica real dentro de un trabajo en equipo.',
+    projectTechTitle: 'Tecnologías',
+    projectTechText: 'Godot · GDScript · lógica de juego · integración de sistemas',
+    tagCombat: 'Sistemas de combate',
+    tagCollaboration: 'Proyecto colaborativo',
+    projectPlayCta: 'Ver página del proyecto',
+    projectRepoCta: 'Ver repositorio público',
+    aboutKicker: 'Sobre mí',
+    aboutTitle: 'Perfil y enfoque',
+    aboutTextOne:
+      'Estoy en una etapa inicial, así que no intento vender una trayectoria que todavía no tengo. Lo que sí quiero transmitir es una forma de trabajar: me interesan los proyectos donde hay que pensar estructura, mantener el código razonablemente limpio y tomar decisiones con sentido de producto.',
+    aboutTextTwo:
+      'Mi GitHub público aún no refleja del todo mi nivel ni mis mejores ideas. Por eso este portfolio está planteado como una selección honesta: enseña lo que ya es defendible en público y deja claro hacia dónde quiero seguir creciendo.',
+    stackKicker: 'Stack',
+    stackTitle: 'Tecnologías con las que trabajo',
+    stackIntro:
+      'No separo esto en “experto” y “domino” porque, para un perfil junior, prefiero ser claro antes que inflar etiquetas.',
+    stackCoreTitle: 'Base actual',
+    stackProjectsTitle: 'Usado en proyectos',
+    stackLearningTitle: 'Explorando y ampliando',
+    chipProduct: 'Criterio de producto',
+    chipUx: 'Claridad de interfaz',
+    roadmapKicker: 'En desarrollo',
+    roadmapTitle: 'Ideas y próximos proyectos',
+    roadmapIntro:
+      'No los presento como productos terminados. Me interesa enseñarlos como líneas reales de trabajo que quiero convertir en proyectos sólidos y publicables.',
+    ideaMagicTitle: 'Mesa privada para jugar Magic online',
+    ideaMagicText:
+      'Idea de producto orientada a una experiencia privada y práctica para jugar Commander online sin depender de una plataforma masiva.',
+    ideaFocusTitle: 'App Flutter para controlar tiempo en apps',
+    ideaFocusText:
+      'Enfoque de utilidad diaria: límites de uso, fricción saludable y una interfaz clara para control personal del tiempo digital.',
+    ideaDnDTitle: 'Herramienta para crear personajes de D&D 5e',
+    ideaDnDText:
+      'Versión móvil y web/escritorio centrada en creación de personajes, organización de opciones y soporte para contenido ampliado.',
+    ideaExtensionTitle: 'Extensión para limitar tiempo en páginas web',
+    ideaExtensionText:
+      'Proyecto pequeño pero útil, pensado para trabajar bien restricciones, configuración local y experiencia de usuario sin ruido.',
+    statusPlanning: 'En planificación',
+    statusPrototype: 'Prototipo / idea',
+    statusExploration: 'Exploración',
+    contactKicker: 'Contacto',
+    contactTitle: 'Busco una primera oportunidad para seguir creciendo en un entorno profesional serio.',
+    contactText:
+      'Si encajo en un puesto junior o queréis hablar sobre mi trabajo, podéis escribirme o revisar los enlaces públicos de abajo.',
+    contactMailCta: 'Escribirme por email',
+    contactGithubCta: 'Abrir GitHub',
+    footerText: 'Portfolio personal. Selección intencional de trabajo público y proyectos en preparación.',
+    footerBack: 'Volver arriba'
+  },
+  en: {
+    pageTitle: 'Alejandro Rodríguez Ortega | Portfolio',
+    pageDescription:
+      'Portfolio of Alejandro Rodríguez Ortega. Junior developer focused on product thinking, system logic, and personal projects built with technical judgment.',
+    skipLink: 'Skip to content',
+    navWork: 'Work',
+    navAbout: 'About',
+    navStack: 'Stack',
+    navRoadmap: 'In progress',
+    navContact: 'Contact',
+    heroEyebrow: 'Junior developer · Selected portfolio',
+    heroTitle: 'I build software with judgment, solid fundamentals, and real room to grow.',
+    heroText:
+      'I am Alejandro Rodríguez Ortega, a junior developer. This portfolio is not meant to fake seniority: it is designed to show how I work, the decisions I make, and the kind of projects I want to keep building.',
+    heroPrimaryCta: 'See featured project',
+    heroSecondaryCta: 'View GitHub',
+    summaryLabel: 'Summary',
+    summaryRoleLabel: 'Profile',
+    summaryRoleValue: 'Junior developer',
+    summaryFocusLabel: 'Focus',
+    summaryFocusValue: 'Frontend, product logic, and personal projects',
+    summaryLookingLabel: 'Goal',
+    summaryLookingValue: 'First professional opportunity',
+    featuredKicker: 'Featured project',
+    featuredTitle: 'Selected work',
+    featuredIntro:
+      'I would rather show less work with proper context. Right now, the public project that best represents how I work is Project Soulware.',
+    projectSubtitle: 'Experimental technical demo built with Godot',
+    projectStatus: 'Public project / demo',
+    projectDescription:
+      'A collaborative project built to explore dialogue and event systems supported by generative AI inside an experimental RPG. My contribution focused especially on the combat system, AI event implementation, and technical support for less conventional mechanics.',
+    projectWhatTitle: 'What it shows',
+    projectWhatText:
+      'The ability to contribute to a shared project, work on gameplay systems, and solve technical problems with a practical mindset.',
+    projectContributionTitle: 'My contribution',
+    projectContributionText:
+      'I do not present this as a solo build. The value here is the systems work and the real technical contribution within a team project.',
+    projectTechTitle: 'Tech',
+    projectTechText: 'Godot · GDScript · gameplay logic · system integration',
+    tagCombat: 'Combat systems',
+    tagCollaboration: 'Collaborative project',
+    projectPlayCta: 'Open project page',
+    projectRepoCta: 'Open public repository',
+    aboutKicker: 'About',
+    aboutTitle: 'Profile and approach',
+    aboutTextOne:
+      'I am still at an early stage, so I am not trying to sell a track record I do not have yet. What I do want to communicate is a way of working: I care about projects where structure matters, code should stay reasonably clean, and decisions should make sense from a product point of view.',
+    aboutTextTwo:
+      'My public GitHub does not fully reflect my current level or my best ideas yet. That is why this portfolio is intentionally selective: it shows what is already defensible in public, while making it clear where I want to keep growing.',
+    stackKicker: 'Stack',
+    stackTitle: 'Technologies I work with',
+    stackIntro:
+      'I am not splitting this into “expert” or “mastery” labels because, for a junior profile, clarity matters more than inflated wording.',
+    stackCoreTitle: 'Current foundation',
+    stackProjectsTitle: 'Used in projects',
+    stackLearningTitle: 'Exploring and expanding',
+    chipProduct: 'Product judgment',
+    chipUx: 'UI clarity',
+    roadmapKicker: 'In progress',
+    roadmapTitle: 'Ideas and next projects',
+    roadmapIntro:
+      'I am not presenting these as finished products. I want them to be visible as real lines of work that I plan to turn into solid, publishable projects.',
+    ideaMagicTitle: 'Private platform to play Magic online',
+    ideaMagicText:
+      'A product idea focused on a practical private experience for playing Commander online without relying on a massive platform.',
+    ideaFocusTitle: 'Flutter app to control time spent in apps',
+    ideaFocusText:
+      'A daily utility idea built around usage limits, healthy friction, and a clear interface for personal digital time control.',
+    ideaDnDTitle: 'Tool for building D&D 5e characters',
+    ideaDnDText:
+      'Mobile and web/desktop product focused on character creation, option organization, and support for expanded content.',
+    ideaExtensionTitle: 'Browser extension to limit time on specific websites',
+    ideaExtensionText:
+      'A small but useful project, well suited for working with restrictions, local configuration, and low-noise UX.',
+    statusPlanning: 'Planning',
+    statusPrototype: 'Prototype / idea',
+    statusExploration: 'Exploration',
+    contactKicker: 'Contact',
+    contactTitle: 'I am looking for a first opportunity to keep growing in a serious professional environment.',
+    contactText:
+      'If I might fit a junior role, or if you want to talk about my work, feel free to reach out or check the public links below.',
+    contactMailCta: 'Email me',
+    contactGithubCta: 'Open GitHub',
+    footerText: 'Personal portfolio. Intentional selection of public work and projects in progress.',
+    footerBack: 'Back to top'
   }
+};
 
-  .main-nav {
-    display: none;
-  }
+const translatableNodes = document.querySelectorAll('[data-i18n]');
+const languageButtons = document.querySelectorAll('.lang-btn');
+const metaDescription = document.querySelector('meta[name="description"]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function applyLanguage(language) {
+  const dictionary = translations[language] || translations.es;
+
+  document.documentElement.lang = language;
+  document.title = dictionary.pageTitle;
+  metaDescription.setAttribute('content', dictionary.pageDescription);
+
+  translatableNodes.forEach((node) => {
+    const key = node.dataset.i18n;
+    if (dictionary[key]) {
+      node.innerHTML = dictionary[key];
+    }
+  });
+
+  languageButtons.forEach((button) => {
+    const isActive = button.dataset.lang === language;
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+
+  localStorage.setItem('portfolio-language', language);
 }
 
-@media (max-width: 720px) {
-  .section {
-    padding: 3.4rem 0;
-  }
+languageButtons.forEach((button) => {
+  button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+});
 
-  .hero {
-    padding-top: 4rem;
-  }
+const savedLanguage = localStorage.getItem('portfolio-language');
+applyLanguage(savedLanguage === 'en' ? 'en' : 'es');
 
-  .hero-copy,
-  .section-shell,
-  .contact-card {
-    padding: 1.35rem;
-  }
+if (!prefersReducedMotion) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
 
-  .project-card-featured {
-    padding: 1.2rem;
-  }
-
-  .project-topline,
-  .roadmap-head,
-  .footer-inner,
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-inner {
-    min-height: auto;
-    padding: 0.8rem 0;
-  }
-
-  .social-list {
-    gap: 0.8rem 1rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
+  document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+} else {
+  document.querySelectorAll('.reveal').forEach((node) => node.classList.add('is-visible'));
 }
