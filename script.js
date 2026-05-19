@@ -7,12 +7,13 @@ const translations = {
     navWork: 'Trabajo',
     navAbout: 'Sobre mí',
     navStack: 'Stack',
+    navCertifications: 'Certificados',
     navRoadmap: 'En desarrollo',
     navContact: 'Contacto',
     heroEyebrow: 'Desarrollador junior · Portfolio seleccionado',
     heroTitle: 'Construyo software con criterio, base técnica y ganas reales de crecer.',
     heroText:
-      'Soy Alejandro Rodríguez Ortega, desarrollador junior. Este portfolio no intenta aparentar más experiencia de la que tengo: está pensado para enseñar cómo trabajo, qué decisiones tomo y qué tipo de proyectos quiero seguir construyendo.',
+      'Soy Alejandro Rodríguez Ortega, desarrollador junior. He planteado este portfolio como una selección clara de mi trabajo público actual, con foco en lo que mejor representa mi forma de construir, aprender y tomar decisiones técnicas.',
     heroPrimaryCta: 'Ver proyecto destacado',
     heroSecondaryCta: 'Ver GitHub',
     summaryLabel: 'Resumen',
@@ -47,7 +48,7 @@ const translations = {
     aboutTextOne:
       'Estoy en una etapa inicial, así que no intento vender una trayectoria que todavía no tengo. Lo que sí quiero transmitir es una forma de trabajar: me interesan los proyectos donde hay que pensar estructura, mantener el código razonablemente limpio y tomar decisiones con sentido de producto.',
     aboutTextTwo:
-      'Mi GitHub público aún no refleja del todo mi nivel ni mis mejores ideas. Por eso este portfolio está planteado como una selección honesta: enseña lo que ya es defendible en público y deja claro hacia dónde quiero seguir creciendo.',
+      'Mi perfil público está en evolución. Por eso priorizo enseñar las piezas que mejor representan mi criterio técnico actual y la dirección en la que quiero seguir creciendo como desarrollador.',
     stackKicker: 'Stack',
     stackTitle: 'Tecnologías con las que trabajo',
     stackIntro:
@@ -88,10 +89,22 @@ const translations = {
     certKicker: 'Formación',
     certTitle: 'Formación y certificados',
     certIntro: 'Formación académica y cursos seleccionados que complementan mi perfil técnico. Incluyo solo lo que considero relevante para el tipo de trabajo que quiero hacer.',
+
     cert1Title: 'Iniciación al desarrollo con IA',
     cert1Meta: '6 horas · marzo 2026',
     cert1Text: 'Formación introductoria centrada en desarrollo con IA y en una visión práctica del paso de 0 a producción.',
-    cert1Cta: 'Ver certificado',
+
+    cert2Title: 'Google: Inteligencia Artificial y productividad',
+    cert2Provider: 'Curso de formación online',
+    cert2Meta: '2 horas · mayo 2026',
+    cert2Text: 'Curso breve sobre el uso de la inteligencia artificial como apoyo a la productividad, con enfoque introductorio y aplicación práctica.',
+
+    cert3Title: 'Marca personal 360º',
+    cert3Provider: 'De profesional anónimo a referente visible',
+    cert3Meta: '8 horas · abril 2026',
+    cert3Text: 'Formación orientada a mejorar la visibilidad profesional, la comunicación del perfil y la forma de presentar el trabajo propio con más claridad.',
+
+    certCta: 'Ver certificado',
   },
   en: {
     pageTitle: 'Alejandro Rodríguez Ortega | Portfolio',
@@ -101,6 +114,7 @@ const translations = {
     navWork: 'Work',
     navAbout: 'About',
     navStack: 'Stack',
+    navCertifications: 'Certificates',
     navRoadmap: 'In progress',
     navContact: 'Contact',
     heroEyebrow: 'Junior developer · Selected portfolio',
@@ -181,10 +195,22 @@ const translations = {
     certKicker: 'Education',
     certTitle: 'Education and certificates',
     certIntro: 'Academic background and selected courses that complement my technical profile. I only include what I consider relevant to the kind of work I want to do.',
+
     cert1Title: 'Introduction to AI Development',
     cert1Meta: '6 hours · March 2026',
     cert1Text: 'Introductory training focused on AI development and a practical view of moving from zero to production.',
-    cert1Cta: 'View certificate',
+
+    cert2Title: 'Google: Artificial Intelligence and Productivity',
+    cert2Provider: 'Online training course',
+    cert2Meta: '2 hours · May 2026',
+    cert2Text: 'A short course on using artificial intelligence to support productivity, with an introductory and practical approach.',
+
+    cert3Title: 'Personal Brand 360º',
+    cert3Provider: 'From anonymous professional to visible reference',
+    cert3Meta: '8 hours · April 2026',
+    cert3Text: 'Training focused on improving professional visibility, profile communication, and the way personal work is presented with more clarity.',
+
+    certCta: 'View certificate',
   }
 };
 
